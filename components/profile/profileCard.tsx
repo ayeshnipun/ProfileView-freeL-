@@ -4,7 +4,8 @@ import { Text, View, StyleSheet, TouchableOpacity, Button, TouchableHighlight } 
 import { Avatar } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Octicons';
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import ProfileAvatar from './ProfileAvatar';
+import ProfileAvatar from './ProfileAvatar/ProfileAvatar';
+import styles from './styles';
 
 export default class ProfileCard extends Component{
 	state = {
@@ -13,19 +14,27 @@ export default class ProfileCard extends Component{
 		address: "Jakarta | Indonesia",
 		endorsers: 105,
 		likes: 45,
-		avatar: 'https://i.ibb.co/KG4J6cs/user.png',
+		avatar: 'https://i.ibb.co/KG4J6cs/user.png',  
 		subAvatars :[]
 	}
 
 	componentDidMount = () => {
+		{ /* This function creates an array */}
+		{ /* Then it creates <ProfileAvatar> components according to the loop */}
+		{ /* Then the array is assigned to the state of this component */}
+		{ /* That state will be used in render method for mapping */}
+
 		var buttonsListArr = [];
 
 		for (let i = 0; i < 3; i++) 
 		{
+			{ /* You nedd to give the source and the avatar size. then it will render according to the given size */}
 			buttonsListArr.push(
-				<ProfileAvatar size={26} source={'https://i.ibb.co/KG4J6cs/user.png'}/>
+				<ProfileAvatar size={26} source={'https://i.ibb.co/KG4J6cs/user.png'}/>   
 			);
 		}
+
+		{ /* setting the state */}
 		this.setState({
 			subAvatars: buttonsListArr
 		})
@@ -34,17 +43,17 @@ export default class ProfileCard extends Component{
 	
 	render() {
 		return (
-			<View style={styles.container}>
-				<View elevation={5} style={styles.profileCard}>
-					<View style={styles.mainRowView}>
-						<View style={styles.mainAvatarView}>
-							<View style={styles.avatarView}>
+			<View style={styles.container}>  
+				<View elevation={5} style={styles.profileCard}> 
+					<View style={styles.mainRowView}>  
+						<View style={styles.mainAvatarView}>  
+							<View style={styles.avatarView}>  
 								<ProfileAvatar size={65} source={this.state.avatar}/>
 							</View>
 
-							<View style={styles.overlappedIconsView}>
-								{
-									this.state.subAvatars.map((l, i) => (
+							<View style={styles.overlappedIconsView}> 
+								{  
+									this.state.subAvatars.map((l, i) => ( 
 										i == 0 ? (
 										<View style={styles.singleOverlapIcon}>
 											{l}
@@ -60,39 +69,36 @@ export default class ProfileCard extends Component{
 
 						</View>
 
-						<View style={styles.mainInformationView}>
-							<View style={styles.informationView}>
-								<Text style={styles.nameText}>{this.state.name}</Text>
+						<View style={styles.mainInformationView}>  
+							<View style={styles.informationView}>   
+								<Text style={styles.nameText}>{this.state.name}</Text> 
 								<Text style={styles.otherText}>{this.state.profession}</Text>
 								<Text style={styles.otherText}>{this.state.address}</Text>
 							</View>
 						
 
-							<View style={styles.bottomInformationView}>
-								<View>
+							<View style={styles.bottomInformationView}>  
+								<View>   
 									<Text style={styles.endorsers}>{this.state.endorsers} endorsers</Text>
 								</View>
 
-								<View style={styles.thumbsUpView}>
+								<View style={styles.thumbsUpView}> 
 									<Ionicons
 										name="md-thumbs-up"
 										color="black"
 										size={28}
-									/>
+									/>  
 									<Text style={styles.thumbsUpText}>{this.state.likes}</Text>
 								</View>
-
 									
-								<TouchableOpacity style={styles.plusIconView} onPress={ () => console.log('test')}>									
+								<TouchableOpacity style={styles.plusIconView} onPress={ () => console.log('test')}>						
 									<Icon
 										name="plus"
 										color="white"
 										size={28}
 									/>
-								</TouchableOpacity>
-								
-							</View>
-							
+								</TouchableOpacity>								
+							</View>							
 						</View>
 					</View>
 				</View>
@@ -100,69 +106,3 @@ export default class ProfileCard extends Component{
 		)
 	}
 }
-// styles.profileCard
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		// justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
-	},
-	profileCard: {
-		// flexDirection: 'row',
-		marginTop: 10,
-		width: "95%",
-		height: 170,
-		backgroundColor: 'white',
-		borderRadius: 20,
-		shadowColor: 'black',
-		shadowOffset: {
-			width: 10,
-			height: 10
-		},
-		shadowRadius: 10,
-		shadowOpacity: 1.0
-	},
-	mainRowView:{ flexDirection: 'row' },
-	mainAvatarView:{flexDirection:'column'},
-	avatarView: {
-		marginLeft: 20,
-		marginRight: 15,
-		marginTop: 15,
-		marginBottom:23,
-		height:67,
-		width:67,
-		borderRadius:50,
-		alignItems:'center',
-		justifyContent: 'center',
-		backgroundColor:'white',alignContent:'center'
-	},
-	informationView: {
-		marginTop: 8
-	},
-	nameText: {
-		fontSize: 28,
-		color: 'black',
-		marginBottom: 5
-	},
-	otherText: {
-		fontSize: 20,
-	},
-	plusIconView: {
-		width: 30,
-		height: 30,
-		backgroundColor: '#42d4f4',
-		borderRadius: 50,
-		alignItems: 'center',
-		marginLeft: "6%"
-	},
-	overlappedIconsView:{ flexDirection:'row', width:100, flex:1, justifyContent: 'center', alignItems:'center'},
-	singleOverlapIcon:{ height: 35, width: 35, borderRadius: 50, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'},
-	overlapIcons:{ height: 35, width: 35, borderRadius: 50, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center', marginLeft: -10 },
-	mainInformationView:{width:"100%", height:150},
-	bottomInformationView:{marginTop:10, flexDirection:'row'},
-	endorsers:{ fontSize: 16 },
-	thumbsUpView:{ flexDirection: 'row', marginLeft: "9%", marginTop:-2  },
-	thumbsUpText:{ fontSize: 16, marginLeft: 3, marginTop:3 }
-});
