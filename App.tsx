@@ -10,35 +10,40 @@
 
 import React from 'react';
 import { Component } from 'react';
-import {Platform, StyleSheet, View } from 'react-native';
-import ProfileCard  from './components/profile/profileCard';
+import { Platform, StyleSheet, View } from 'react-native';
+
+import TabBar from './components/TabBar/TabBar';
+import { Text } from 'react-native-elements';
 
 
 
-interface Props {}
+interface Props { }
 export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-		<ProfileCard />
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={{flex:1}}>
+				{/* <ProfileCard /> */}
+				<TabBar />
+				{/* <Text>dsghgdhsds</Text> */}
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    },
+    instructions: {
+        textAlign: 'center',
+        color: '#333333',
+        marginBottom: 5,
+    },
 });

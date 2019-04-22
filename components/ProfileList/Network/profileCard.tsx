@@ -42,8 +42,7 @@ export default class ProfileCard extends Component{
 
 	
 	render() {
-		return (
-			<View style={styles.container}>  
+		return (  
 				<View elevation={5} style={styles.profileCard}> 
 					<View style={styles.mainRowView}>  
 						<View style={styles.mainAvatarView}>  
@@ -102,7 +101,6 @@ export default class ProfileCard extends Component{
 						</View>
 					</View>
 				</View>
-			</View>
 		)
 	}
 }
