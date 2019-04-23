@@ -61,9 +61,9 @@ export default class Network extends Component {
 Network.navigationOptions = {
 	tabBarIcon: ({ tintColor, focused }) => (
 		<View>
-			<Icon
-				name="users"
-				size={22}
+			<IconFA5
+				name="user-friends"
+				size={26}
 				color={tintColor}
 			/>
 		</View>
