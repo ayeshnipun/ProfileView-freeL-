@@ -1,0 +1,35 @@
+required components
+	- NetWorkTabs
+	- ProfileList
+	- TabBar (StatusBar)
+
+
+
+Structure ( - Directories, > Files)
+
+	- components
+		- NetWorkTabs
+			> NetWorkTabs.tsx
+
+		- ProfileList
+			- ProfileListSubComponents
+				- ProfileAvatar
+					> ProfileAvatar.tsx
+				> profieCard.tsx
+
+			> ProfileList.tsx
+
+		- TabBar
+			> TabBar.tsx
+
+		- Views (Not required. Screens for TabBar component)
+			- Messages
+				> Messages.tsx
+			- More
+				> More.tsx
+			- Network
+				> Network.tsx
+			- Profile
+				> Profile.tsx
+			- Search
+				> Search.tsx

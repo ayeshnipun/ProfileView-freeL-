@@ -86,6 +86,7 @@ export default class ProfileCard extends Component{
 										name="md-thumbs-up"
 										color="black"
 										size={28}
+										style={{bottom:5}}
 									/>  
 									<Text style={styles.thumbsUpText}>{this.state.likes}</Text>
 								</View>

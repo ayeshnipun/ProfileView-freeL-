@@ -11,9 +11,10 @@ const styles = StyleSheet.create({
 	},
 
 	profileCard: {
-		marginTop: 10,
-		width: "95%",
-		height: 170,
+		marginTop: 1,
+		marginBottom:15,
+		width: "100%",
+		height: 160,
 		backgroundColor: 'white',
 		borderRadius: 20,
 		shadowColor: 'black',
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
 	},
 
 	avatarView: {
-		marginLeft: 20,
+		marginLeft: 15,
 		marginRight: 15,
 		marginTop: 15,
 		marginBottom:23,
@@ -51,13 +52,13 @@ const styles = StyleSheet.create({
 	},
 
 	nameText: {
-		fontSize: 28,
+		fontSize: 25,
 		color: 'black',
-		marginBottom: 5
+		marginBottom: 16
 	},
 
 	otherText: {
-		fontSize: 20,
+		fontSize: 16,
 	},
 
 	plusIconView: {
@@ -66,7 +67,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#42d4f4',
 		borderRadius: 50,
 		alignItems: 'center',
-		marginLeft: "6%"
+		marginLeft: "10%",
+		bottom:5
 	},
 
 	overlappedIconsView:{ 
@@ -101,22 +103,22 @@ const styles = StyleSheet.create({
 	},
 
 	bottomInformationView:{
-		marginTop:10, 
+		top:20, 
 		flexDirection:'row'
 	},
 
 	endorsers:{ 
-		fontSize: 16 
+		fontSize: 12
 	},
 
 	thumbsUpView:{ 
 		flexDirection: 'row', 
-		marginLeft: "9%", 
+		marginLeft: "11%", 
 		marginTop:-2  
 	},
 
 	thumbsUpText:{ 
-		fontSize: 16, 
+		fontSize: 12, 
 		marginLeft: 3, 
 		marginTop:3 
 	}
