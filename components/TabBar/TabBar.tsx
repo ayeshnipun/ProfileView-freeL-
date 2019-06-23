@@ -14,9 +14,9 @@ const TabBar = createBottomTabNavigator(
 	{
 		Profile: Profile,
 		Network: Network,
-		Messages: Messages,
+		Chat: Messages,
 		Search: Search,
-		More: More,
+		Settings: More,
 	},
 	{
 		tabBarOptions: {

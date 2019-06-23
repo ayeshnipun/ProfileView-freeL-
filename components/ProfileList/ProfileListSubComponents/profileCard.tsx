@@ -9,7 +9,7 @@ import styles from './styles';
 
 export default class ProfileCard extends Component{
 	state = {
-		name: "John smith",
+		name: "Ayesh Nipun",
 		profession: "Teacher",
 		address: "Jakarta | Indonesia",
 		endorsers: 105,
@@ -78,7 +78,7 @@ export default class ProfileCard extends Component{
 
 							<View style={styles.bottomInformationView}>  
 								<View>   
-									<Text style={styles.endorsers}>{this.state.endorsers} endorsers</Text>
+									<Text style={styles.endorsers}>{this.state.endorsers} Friends</Text>
 								</View>
 
 								<View style={styles.thumbsUpView}> 

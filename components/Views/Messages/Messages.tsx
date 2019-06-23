@@ -8,7 +8,7 @@ export default class Messages extends Component {
 	render() {
 		return (
 			<View>
-				<Text> messages </Text>
+				<Text> chat </Text>
 			</View>
 		)
 	}
@@ -51,13 +51,13 @@ export default class Messages extends Component {
 					/>
 				</View>
 
-				<View style={{marginLeft:-17, marginTop:3}}>
+				{/* <View style={{marginLeft:-17, marginTop:3}}>
 					<Icon
 						name="ios-more"
 						size={18}
 						color="white"
 					/>
-				</View>
+				</View> */}
 			</View>
 		)
 	} 
